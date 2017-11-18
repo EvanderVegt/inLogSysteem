@@ -1,18 +1,10 @@
-<?php
-include 'General.php';
-
-echo"registatie formulier";
-
-
-?>
-
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Inlog pagina</title>
+        <title>Registratie pagina</title>
     </head>
     <body>
-        <form name="registratie" action="registr.php" method="post" autocomplete="off">
+        <form name="registratie" action="registratie.php" method="post" autocomplete="off">
 
             <fieldset>
 
@@ -26,9 +18,56 @@ echo"registatie formulier";
 
             </fieldset>
         </form>
-        <?php
-        
-   
-        ?>
+
     </body>
 </html>
+<?php
+
+include 'General.php';
+
+echo"registratie formulier";
+echo "<br><br>";
+    $conn = connectionDB();
+
+     if (isset($_POST['Gebruikersnaam'])) {
+    
+         $sql = "INSERT INTO `inlog`(`Gebruikersnaam`, `Wachtwoord`)VALUES('" . $_POST['Gebruikersnaam'] . "','" . $_POST['Wachtwoord'] . "')";
+
+           // $conn->query($sql);
+    
+    
+
+
+    if (isset($_POST['Gebruikersnaam'])) {
+
+        $Gebruikersnaam = $_POST['Gebruikersnaam'];
+        $Wachtwoord = $_POST['Wachtwoord'];
+
+            $sql = "SELECT * FROM `inlog` WHERE `Gebruikersnaam`='" . $Gebruikersnaam . "'AND `Wachtwoord`='" . $Wachtwoord . "'";
+
+             $result = $conn->query($sql);
+
+                $num = mysqli_num_rows($result);
+
+
+    
+    
+    switch ($num) {
+
+      case $num != 1;
+          $registreren = 'registreren.php';        
+            header("location: $registreren");
+           break;
+        
+       case $num == 1;
+           $welkom = 'welkom.php';
+           header("location: $welkom");
+            break;
+
+         }
+       }
+    }
+
+
+
+?>

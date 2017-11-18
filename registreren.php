@@ -1,12 +1,14 @@
 <?php
-echo "Onbekende Gebruikersnaam, Will je je laten registreren??";
+
+echo "<br><br>Onbekende Gebruikersnaam, Will je je laten registreren??<br><br>";
+
 
 
 ?>
 
-        <form action="index.php" method="post"   >
-            <button type=submit >  opnieuw </button>
-        </form>
+<form action="registratie.php" method="post"   >
+            <button type=submit >  terug </button>
+      
         <form action="registratie.php" method="post"   >
             <button type=submit >  registreren </button>
         </form>
