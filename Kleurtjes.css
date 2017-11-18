@@ -1,0 +1,23 @@
+body, text {
+
+    background-color: greenyellow;
+    color: grey;
+
+} 
+    
+#index{
+
+    background-color: lavenderblush;
+    
+}
+#plaatsplaatje{
+    padding-left:600px;
+}
+
+#inloginput{
+    padding-top: 250px;
+}
+
+.button, #input {
+    background-color: linen;
+}
