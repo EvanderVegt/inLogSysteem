@@ -1,4 +1,9 @@
-<?php include 'General.php';
+<?php
+include 'General.php';
+
+echo"registatie formulier";
+
+
 ?>
 
 <html>
@@ -7,7 +12,7 @@
         <title>Inlog pagina</title>
     </head>
     <body>
-        <form name="inlog" action="inlog.php" method="post" autocomplete="off">
+        <form name="registratie" action="registr.php" method="post" autocomplete="off">
 
             <fieldset>
 
